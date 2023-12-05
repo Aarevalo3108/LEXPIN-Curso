@@ -1,0 +1,52 @@
+/* Mi primer comentario en CSS */
+/* root = archivo main. Para colocar variables.*/
+:root {
+  --mainColor: purple;
+}
+h3 {
+  color: var(--mainColor);
+}
+/* ID */
+#container {
+  background-color: red;
+  color: rgb(163, 163, 163);
+}
+/* Clase */
+.subtitulo {
+  color: aquamarine;
+}
+/* Selector especifico */
+ul li h2 {
+  color: cadetblue;
+}
+
+#prueba{
+  /* ancho */
+  width: 200px;
+  /* altura */
+  height: 200px;
+  /* color de fondo */
+  background-color: rgb(4, 87, 84);
+  /* grosor de letra */
+  font-weight: 900;
+  /* tamaño de letra */
+  font-size: 34px;
+  /* Tipografia */
+  font-family: 'Courier New', Courier, monospace;
+  /* color de la letra */
+  color: rgb(160, 104, 0);
+  /* distribucion del texto */
+  text-align: center;
+  /* tipo de decoracion */
+  text-decoration: underline;
+  /* color de la decoracion */
+  text-decoration-color: darkblue;
+  /* cambiar la letra si es mayuscula o minuscula */
+  text-transform: uppercase;
+  /* espaciado de letra */
+  letter-spacing: 10px;
+  /* espaciado de palabra */
+  word-spacing: 20px;
+  /* altura de linea */
+  line-height: 100px;
+}
