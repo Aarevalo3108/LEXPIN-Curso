@@ -1,0 +1,26 @@
+.cubo{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(109, 29, 29);
+    position: relative;
+    top: 200px;
+    left: 200px;
+    animation: cubo 5s infinite;
+}
+
+@keyframes cubo{
+    0% {background-color: #ff0000; top: 200px; left: 200px}
+    25% {background-color: #ffd500; top: 400px; left: 300px; scale: 3}
+    50% {background-color: #2bff00; right: 200px; left: 100px}
+    750% {background-color: #00fbff; bottom: 200px; left: 400px; scale: 0.1}
+    100% {background-color: #ff0000; top: 200px; left: 200px}
+}
+
+/* 
+    Realizar una copia de un perfil de instagram, esta debe terner un maximo de 5 filas de imagenes, un minimo de 3
+    utilizar grid y flex para la realizacion del proyecto
+    
+    Opcional: Hacer que cuando cargue la pagina, salga una animacion del logo de Instagram, como lo hace la pagina real
+
+    fecha limite: jueves 21 de diciembre.
+*/
