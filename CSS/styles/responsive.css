@@ -1,0 +1,38 @@
+/* primero se realiza la visualizacion en tlf (responsiveFirst o mobileFirst) */
+.galeria{
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 25px;
+  background-color: brown;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .galeria{
+    background-color: blue;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .galeria{
+    background-color: rgb(255, 0, 0);
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .galeria{
+    background-color: rgb(72, 255, 0);
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .galeria{
+    background-color: rgb(212, 0, 255);
+    /* display: none; */
+  }
+}
