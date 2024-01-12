@@ -1,14 +1,20 @@
 /* mi primera variable */
-.button {
-  font-size: 24px;
-  font-weight: 400;
-  letter-spacing: 12px;
-  border-radius: 35px;
-}
-.button p {
+nav {
+  background-color: blue;
   color: white;
 }
 
-.bg-red {
+.button {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 12px;
+  margin: 20px;
   background-color: red;
-}/*# sourceMappingURL=styles.css.map */
+  color: initial;
+  border-radius: 35px;
+}
+/* Proyecto SASS
+ * Realizar un blog de salud con una grilla de articulos (3columnas, 2 filas maximo)
+ * y un banner o seccion principal al inicio, ademas de una barra de navegacion.
+ * Este proyecto debe ser responsive (Componentes, mixis,condicionales y variables)
+ * Fecha de entrega: 09/01/24 *//*# sourceMappingURL=styles.css.map */
