@@ -4,15 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <p onclick="console.log('Hola Mundo')">Hola</p>
-  <button onclick="saludarConParametros()" >Presioname</button>
-  <button onclick="recursiva()">Recursivo</button>
+<body class="min-h-screen bg-gray-700 text-gray-300 flex flex-col items-center">
+  <!-- <p onclick="console.log('Hola Mundo')">Hola</p> -->
+  <!-- <button onclick="saludarConParametros()" >Presioname</button> -->
+  <!-- <button onclick="recursiva()">Recursivo</button> -->
+  <h1 class="w-64 h-32 text-xl flex justify-center items-center">Ejercicios Javascript</h1>
+  <section class="grid grid-cols-3 justify-items-center gap-4">
+    <button class="bg-cyan-900 w-28 h-28 p-6 rounded-full hover:bg-zinc-500 text-md" onclick="paridad()">Paridad</button>
+    <button class="bg-cyan-900 w-28 h-28 p-6 rounded-full hover:bg-zinc-500 text-md" onclick="detectarJuan()">isJuan?</button>
+    <button class="bg-cyan-900 w-28 h-28 p-6 rounded-full hover:bg-zinc-500 text-md" onclick="MAYUS()">MAYUS</button>
+    <button class="bg-cyan-900 w-28 h-28 p-6 rounded-full hover:bg-zinc-500 text-md" onclick="minus()">minus</button>
+    <button class="bg-cyan-900 w-28 h-28 p-6 rounded-full hover:bg-zinc-500 text-md" onclick="longitud()">longitud</button>
+    <button class="bg-cyan-900 w-28 h-28 p-6 rounded-full hover:bg-zinc-500 text-md" onclick="first()">primero</button>
+    <button class="bg-cyan-900 w-28 h-28 p-6 rounded-full hover:bg-zinc-500 text-md" onclick="last()">ultimo</button>
+    <button class="bg-cyan-900 w-28 h-28 p-6 rounded-full hover:bg-zinc-500 text-md" onclick="text()">texto</button>
+    <button class="bg-cyan-900 w-28 h-28 p-6 rounded-full hover:bg-zinc-500 text-md" onclick="corte()">corte</button>
+  </section>
 </body>
 <script>
   console.log("Hola, desde Script")
 </script>
 <!-- <script src="./basic.js"></script> -->
-<script src="./section2.js"></script>
+<!-- <script src="./section2.js"></script> -->
+<script src="ejercicios.js"></script>
 </html>
