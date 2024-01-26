@@ -133,38 +133,127 @@ function corte(){
     Crear una funcion que reciba como parametro un arreglo de numeros
     e imprima en consola cada elemento del arreglo
 */
+function Ejercicio7(data){
+  for(i=0;i<data.length;i++){
+    console.log(data[i]);
+  }
+}
+const nros1 = [1,2,3,4,5];
+Ejercicio7(nros1);
   /*
   Ejercicios 8:
   Crear una funcion que reciba como parametro un arreglo de numeros
   e imprima en consola la suma de todos los elementos del arreglo
 */
+
+function Ejercicio8(data){
+  let aux = 0;
+  for(i=0;i<data.length;i++){
+    aux += data[i];
+  }
+  console.log(aux);
+}
+const nros2 = [1,2,3,4,5];
+Ejercicio8(nros2);
   /*
   Ejercicios 9:
   Crear una funcion que reciba como parametro un arreglo de numeros
   e imprima en consola el promedio de todos los elementos del arreglo
 */
+
+function Ejercicio9(data){
+  let aux = 0;
+  for(i=0;i<data.length;i++){
+    aux += data[i];
+  }
+  console.log(aux/data.length);
+}
+const nros3 = [1,2,3,4,5];
+Ejercicio9(nros3);
+
   /*
   Ejercicios 10:
   Crear una funcion que reciba como parametro un arreglo de numeros
   e imprima en consola el numero mayor del arreglo
 */
+
+
+function Ejercicio10(data){
+  let aux,mayor;
+  for(i=0,mayor=data[i];i<data.length;i++,aux = data[i]){
+    if(mayor<aux){
+      mayor = data[i];
+    }
+  }
+  console.log(mayor);
+}
+const nros4 = [1,20,3,4,5];
+Ejercicio10(nros4);
+
   /*
   Ejercicios 11:
   Crear una funcion que reciba como parametro un arreglo de numeros
   e imprima en consola el numero menor del arreglo
 */
+
+function Ejercicio11(data){
+  let aux, menor;
+  for(i=0,menor=data[i];i<data.length;i++,aux = data[i]){
+    if(menor>aux){
+      menor = data[i];
+    }
+  }
+  console.log(menor);
+}
+const nros5 = [100,-2,3,0.4,-5];
+Ejercicio11(nros5);
+
   /*
   Ejercicios 12:
   Crear una funcion que reciba como parametro un arreglo de numeros
   e imprima en consola los numeros pares del arreglo
 */
+
+function Ejercicio12(data){
+  for(i=0;i<data.length;i++){
+    if(!(data[i]%2)){
+      console.log(data[i])
+    }
+  }
+}
+const nros6 = [100,20,3,0.4,5,6];
+Ejercicio12(nros6);
+
   /*
   Ejercicios 13:
   Crear una funcion que reciba como parametro un arreglo de numeros
   e imprima en consola los numeros impares del arreglo
 */
+
+function Ejercicio12(data){
+  for(i=0;i<data.length;i++){
+    if(data[i]%2){
+      console.log(data[i])
+    }
+  }
+}
+const nros7 = [100,20,3,0.4,5,6];
+Ejercicio12(nros7);
+
   /*
   Ejercicios 14:
   Crear una funcion que reciba como parametro un arreglo de frutas
   e imprima el nombre de la fruta mas larga*/
 
+function Ejercicio12(data){
+  let frutaMayor,aux;
+  for(i=0,frutaMayor = data[i]; i<data.length; i++){
+    aux = data[i];
+    if(frutaMayor.length < aux.length){
+      frutaMayor = aux;
+    }
+  }
+  console.log(frutaMayor);
+}
+const frutas = ['patilla','melon','mandarina','tamarindoooo','mango','uva'];
+Ejercicio12(frutas);
