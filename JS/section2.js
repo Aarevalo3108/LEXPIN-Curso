@@ -209,3 +209,100 @@ for(let i=0;i<frutas.length;i++){
   // console.log(i);
   console.log(frutas[i]);
 }
+
+//  Bucle while
+let i = 0;
+while(i < 10){
+  console.log(i);
+  i++
+}
+
+// Bucle  do while
+let j = 0;
+do{
+  console.log(j);
+  j++;
+} while(j<10);
+
+//  Bucle for of (recorrer arrays)
+let carros = ["Mazda","Toyota","Chevrolet","Renault"];
+for(let carro of carros){
+  console.log(carro);
+}
+
+// Objetos
+let persona = {
+  nombre: "Juan",
+  apellido: "Perez",
+  edad: 25,
+  hobbies: ["correr","saltar","dormir"],
+  direccion: {
+    calle: "calle 1",
+    numero: 1,
+    barrio: "Barrio 1"
+  },
+  saludar: function(){
+    console.log("Hola desde un objeto");
+  }
+}
+
+console.log(`Hola mi nombre es ${persona.nombre} ${persona.apellido} y tengo ${persona.edad}`);
+
+// Array de objetos
+let personas = [
+  {
+    nombre: "Juan",
+    apellido: "Perez",
+    edad: 25,
+    hobbies: ["correr","saltar","dormir"],
+    direccion: {
+      calle: "calle 1",
+      numero: 1,
+      barrio: "Barrio 1"
+    },
+    saludar: function(){
+      console.log("Hola desde un objeto");
+    }
+  },
+  {
+    nombre: "Maria",
+    apellido: "Salome",
+    edad: 25,
+    hobbies: ["correr","saltar","dormir"],
+    direccion: {
+      calle: "calle 1",
+      numero: 1,
+      barrio: "Barrio 1"
+    },
+    saludar: function(){
+      console.log("Hola desde un objeto");
+    }
+  },
+  {
+    nombre: "Manuel",
+    apellido: "Hernandez",
+    edad: 25,
+    hobbies: ["correr","saltar","dormir"],
+    direccion: {
+      calle: "calle 1",
+      numero: 1,
+      barrio: "Barrio 1"
+    },
+    saludar: function(){
+      console.log("Hola desde un objeto");
+    }
+  }
+]
+
+// For in (sirve para recorrer objetos)
+
+for(let propiedad in persona){
+  // console.log(propiedad); <-- valor de la propiedad
+  // console.log(persona[propiedad]); <-- forma para recorrer las propiedades (nombre,apellido,edad,etc)
+  console.log(persona[propiedad]);
+  // console.log(persona["direccion"]); <-- forma para mostrar propiedad en un for in, fuera seria como persona.direccion
+}
+
+let compras_supermercado = {
+
+}

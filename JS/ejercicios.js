@@ -257,3 +257,197 @@ function Ejercicio12(data){
 }
 const frutas = ['patilla','melon','mandarina','tamarindoooo','mango','uva'];
 Ejercicio12(frutas);
+
+/*
+
+  Ejericio 15:
+  Crea una funcion que realice la sucecion de fibonacci
+
+*/
+
+function fibo(n){
+  for(i=0,A=1,B=1,aux=0; i<n; i++){
+    if(i<3){
+      if(i<1){console.log(0);}
+      else{console.log(1);}
+    } else{
+      console.log(A + B);
+      aux=A;
+      A += B;
+      B=aux;
+    }
+  }
+}
+const N = 11;
+fibo(N);
+
+
+/*
+
+  Ejericio 16:
+  Crea las funciones agregar, eliminar, buscar, actualizar de un arreglo.
+  Cada funcion debe recibir como parametro el arreglo y el elemento a agregar, eliminar,
+  buscar o actualizar y debe retornar el arreglo modificado. Debes imprimir el arreglo
+  modificado en cada funcion para verificar su funcionamiento.
+
+*/
+
+function add(arreglo,dato){
+  console.log(arreglo);
+  return arreglo.push(dato);
+}
+function remove(arreglo,dato){
+  console.log(arreglo);
+  for(i=0;i<arreglo.length;i++){
+    if(arreglo[i]==dato){
+      return arreglo.splice(i,1);
+    }
+  }
+  return console.log(`el dato "${dato}" no existe en el arreglo`);
+}
+function search(arreglo,dato){
+  for(i=0;i<arreglo.length;i++){
+    if(arreglo[i]==dato){
+      return console.log(`el dato "${dato}" existe y tiene posicion ${i}`);
+    }
+  }
+  return console.log(`el dato "${dato}" no existe en el arreglo`);
+}
+let lista = ['patilla','melon','mandarina','tamarindo','mango','uva'];
+// add(lista,'mango');
+// remove(lista,'tamarindo');
+search(lista,'tamarindo');
+console.log(lista);
+
+/*
+
+Segun el siguiente arreglo de objetos:
+
+  const personas = [
+    {
+      nombre: "Juan",
+      apellido: "Perez",
+      edad: 25,
+      hobbies: ["correr", "saltar", "dormir"],
+      direccion: {
+        direccion_antigua: {
+          calle: "calle 1",
+          numero: 1,
+          barrio: "barrio 1",
+        },
+        direccion_actual: {
+          calle: "calle 2",
+          numero: 2,
+          barrio: "barrio 2",
+        },
+      },
+    },
+    {
+      nombre: "Maria",
+      apellido: "Lopez",
+      edad: 30,
+      hobbies: ["correr", "saltar", "dormir"],
+      direccion: {
+        direccion_antigua: {
+          calle: "calle 3",
+          numero: 3,
+          barrio: "barrio 3",
+        },
+        direccion_actual: {
+          calle: "calle 4",
+          numero: 4,
+          barrio: "barrio 4",
+        },
+      },
+    },
+    {
+      nombre: "Pedro",
+      apellido: "Martinez",
+      edad: 35,
+      hobbies: ["correr", "saltar", "dormir"],
+      direccion: {
+        direccion_antigua: {
+          calle: "calle 5",
+          numero: 5,
+          barrio: "barrio 5",
+        },
+        direccion_actual: {
+          calle: "calle 6",
+          numero: 6,
+          barrio: "barrio 6",
+        },
+      },
+    },
+  ]
+
+  Ejercicio 1:
+  Imprimir en consola el nombre de todas las personas
+  Ejercicio 2:
+  Imprimir en consola todos los hobbies de todas las personas
+  Ejercicio 3:
+  Imprimir en consola todas las direcciones de todas las personas
+  Ejercicio 4:
+  Imprimir en consola la direccion actual de todas las personas
+  Ejercicio 5:
+  Imprimir en consola la direccion antigua de todas las personas
+
+  Nota:
+  Realizarlo con for of y for in y si lo deseas con for
+*/
+
+const lista_personas = [
+  {
+    nombre: "Juan",
+    apellido: "Perez",
+    edad: 25,
+    hobbies: ["correr", "saltar", "dormir"],
+    direccion: {
+      direccion_antigua: {
+        calle: "calle 1",
+        numero: 1,
+        barrio: "barrio 1",
+      },
+      direccion_actual: {
+        calle: "calle 2",
+        numero: 2,
+        barrio: "barrio 2",
+      },
+    },
+  },
+  {
+    nombre: "Maria",
+    apellido: "Lopez",
+    edad: 30,
+    hobbies: ["correr", "saltar", "dormir"],
+    direccion: {
+      direccion_antigua: {
+        calle: "calle 3",
+        numero: 3,
+        barrio: "barrio 3",
+      },
+      direccion_actual: {
+        calle: "calle 4",
+        numero: 4,
+        barrio: "barrio 4",
+      },
+    },
+  },
+  {
+    nombre: "Pedro",
+    apellido: "Martinez",
+    edad: 35,
+    hobbies: ["correr", "saltar", "dormir"],
+    direccion: {
+      direccion_antigua: {
+        calle: "calle 5",
+        numero: 5,
+        barrio: "barrio 5",
+      },
+      direccion_actual: {
+        calle: "calle 6",
+        numero: 6,
+        barrio: "barrio 6",
+      },
+    },
+  },
+]
