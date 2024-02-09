@@ -266,14 +266,18 @@ Ejercicio12(frutas);
 */
 
 function fibo(n){
-  for(i=0,A=1,B=1,aux=0; i<n; i++){
+  for(i=0, A=1, B=1,aux=0; i<n; i++){
     if(i<3){
-      if(i<1){console.log(0);}
-      else{console.log(1);}
+      if(i<1){
+        console.log(0);
+      }
+      else{
+        console.log(1);
+      }
     } else{
       console.log(A + B);
       aux=A;
-      A += B;
+      A = A + B;
       B=aux;
     }
   }
@@ -451,3 +455,44 @@ const lista_personas = [
     },
   },
 ]
+function mostrarNombre(lista){
+  for(let persona of lista){
+    console.log(persona.nombre);
+  }
+}
+function mostrarHobbies(lista){
+  for(let persona of lista){
+    for(let hobby of persona.hobbies){
+      console.log(hobby);
+    }
+  }
+}
+function mostrarDirecciones(lista){
+  for(let persona of lista){
+    for(let direcciones in persona.direccion){
+      console.log(direcciones)
+    }
+  }
+}
+// mostrarNombre(lista_personas);
+// mostrarHobbies(lista_personas);
+mostrarDirecciones(lista_personas);
+
+for(let persona of lista_personas){
+  for(let propiedad in persona){
+    if(propiedad == "hobbies"){
+      for(let hobbie of persona[propiedad]){
+        console.log(hobbie);
+      }
+    } else if(propiedad == "direccion"){
+      for(let direcciones in persona[propiedad]){
+        for(let direccion in persona[propiedad][direcciones]){
+          console.log(persona[propiedad][direcciones][direccion])
+        }
+      }
+    }
+    else{
+      console.log(persona[propiedad]);
+    }
+  }
+}

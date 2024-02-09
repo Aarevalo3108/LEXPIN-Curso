@@ -303,6 +303,76 @@ for(let propiedad in persona){
   // console.log(persona["direccion"]); <-- forma para mostrar propiedad en un for in, fuera seria como persona.direccion
 }
 
-let compras_supermercado = {
+// Ejericio de una lista de objetos que contienen listas de objetos
+let compras_supermercado = [
+  {
+    nombre: "Juan",
+    productos: [
+      {
+        nombre: "manzana",
+        cantidad: 2,
+        precio: 1000,
+      },
+      {
+        nombre: "pera",
+        cantidad: 3,
+        precio: 2000,
+      },
+    ],
+  },
+  {
+    nombre: "Maria",
+    productos: [
+      {
+        nombre: "jamon",
+        cantidad: 1,
+        precio: 5000,
+      },
+      {
+        nombre: "queso",
+        cantidad: 2,
+        precio: 10000,
+      },
+    ],
+  },
+  {
+    nombre: "Pedro",
+    productos: [
+      {
+        nombre: "carne",
+        cantidad: 1,
+        precio: 10000,
+      },
+      {
+        nombre: "pollo",
+        cantidad: 2,
+        precio: 8000,
+      },
+    ],
+  },
+];
 
+for (let persona of compras_supermercado) {
+  for (let propiedad in persona) {
+    console.log(`Tengo una propiedad llamada ${propiedad}
+    y tiene un valor el cual es: ${persona[propiedad]}`);
+    if (propiedad == "productos") {
+      for (let producto of persona[propiedad]) {
+        for (let propiedad_producto in producto) {
+          console.log(`Tengo una propiedad llamada ${propiedad_producto}
+         y tiene un valor el cual es: ${producto[propiedad_producto]}`);
+        }
+      }
+    }
+  }
+}
+
+// Ejercicio hecho con FOR
+for (let i = 0; i < compras_supermercado.length; i++) {
+  console.log(
+    `${compras_supermercado[i].nombre} tiene los siguientes productos:`
+  );
+  for (let j = 0; j < compras_supermercado[i].productos.length; j++) {
+    console.log(compras_supermercado[i].productos[j].nombre);
+  }
 }

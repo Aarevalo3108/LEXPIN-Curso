@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Juegos</title>
+</head>
+<body class="bg-gray-600">
+  <div class="h-[20vh]">
+    <h1 class="text-center p-8">Juegos y apps Disponibles:</h1>
+    <div class="flex justify-center gap-4 w-full">
+      <button class="bg-blue-600 p-2 hover:scale-125 hover:z-10 active:translate-y-1 drop-shadow rounded-xl" onclick="Game1()">Piedra, papel o tijeras.</button>
+      <button class="bg-blue-600 p-2 hover:scale-125 hover:z-10 active:translate-y-1 drop-shadow rounded-xl" onclick="Game2()">ToDo list</button>
+      <button class="bg-blue-600 p-2 hover:scale-125 hover:z-10 active:translate-y-1 drop-shadow rounded-xl" onclick="">Cuadro en movimiento</button>
+      <button class="bg-blue-600 p-2 hover:scale-125 hover:z-10 active:translate-y-1 drop-shadow rounded-xl" onclick="">Calculadora</button>
+      <button class="bg-blue-600 p-2 hover:scale-125 hover:z-10 active:translate-y-1 drop-shadow rounded-xl" onclick="">Juego de memoria</button>
+      <button class="bg-blue-600 p-2 hover:scale-125 hover:z-10 active:translate-y-1 drop-shadow rounded-xl" onclick="">Snake</button>
+      <button class="bg-blue-600 p-2 hover:scale-125 hover:z-10 active:translate-y-1 drop-shadow rounded-xl" onclick="">Juego de la vieja</button>
+    </div>
+  </div>
+  <div class="flex flex-col justify-center items-center h-[80vh] w-full" id="main"></div>
+  <script src="scripts/index.js"></script>
+</body>
+</html>
