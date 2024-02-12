@@ -61,8 +61,7 @@ function Game1(){
   for(i = 0; i<3; i++){
     botones[i].innerText = op[i];
     botones[i].classList.add("p-4","active:translate-y-1","rounded-xl",color[i]);
-    botones[i].setAttribute("id",`Boton${i}`);
-    botones[i].setAttribute("onclick",`Game1${op[i]}()`)
+    botones[i].setAttribute("onclick",`Game1Option(${i})`)
     section1.appendChild(botones[i]);
   }
   section2.classList.add("flex","gap-8")
@@ -82,72 +81,119 @@ function Game1(){
   main.appendChild(section3);
   mensaje.classList.add("text-xl","rounded-xl","p-4");
 }
-function Game1Piedra(){
+function Game1Option(jugador){
   while (section3.hasChildNodes()) {
     section3.removeChild(section3.firstChild);
   }
   mensaje.classList.remove("bg-green-500","bg-gray-500","bg-orange-500");
-  const bot = Math.floor(Math.random() * 3);
-  pantalla[0].innerText = PPTimagen[0];
+  let bot = Math.floor(Math.random() * 3);
+  pantalla[0].innerText = PPTimagen[jugador];
   pantalla[1].innerText = PPTimagen[bot];
-  if(bot == 1){
-    mensaje.innerText = "Perdiste!";
-    mensaje.classList.add("bg-orange-500");
-  } else if(bot == 2){
+  if(bot == jugador){
+    mensaje.innerText = "Empate!";
+    mensaje.classList.add("bg-gray-500");
+  } else if((bot == 0 && jugador == 1) || (bot == 1 && jugador == 2) || (bot == 2 && jugador == 0)){
     mensaje.innerText = "Ganaste!";
     mensaje.classList.add("bg-green-500");
   }
   else{
-    mensaje.innerText = "Empate!";
-    mensaje.classList.add("bg-gray-500");
-  }
-  section3.appendChild(mensaje);
-}
-function Game1Papel(){
-  while (section3.hasChildNodes()) {
-    section3.removeChild(section3.firstChild);
-  }
-  mensaje.classList.remove("bg-green-500","bg-gray-500","bg-orange-500");
-  const bot = Math.floor(Math.random() * 3);
-  pantalla[0].innerText = PPTimagen[1];
-  pantalla[1].innerText = PPTimagen[bot];
-  if(bot == 0){
-    mensaje.innerText = "Ganaste!";
-    mensaje.classList.add("bg-green-500");
-  } else if(bot == 2){
     mensaje.innerText = "Perdiste!";
     mensaje.classList.add("bg-orange-500");
-  }
-  else{
-    mensaje.innerText = "Empate!";
-    mensaje.classList.add("bg-gray-500");
-  }
-  section3.appendChild(mensaje);
-}
-function Game1Tijera(){
-  while (section3.hasChildNodes()) {
-    section3.removeChild(section3.firstChild);
-  }
-  mensaje.classList.remove("bg-green-500","bg-gray-500","bg-orange-500");
-  const bot = Math.floor(Math.random() * 3);
-  pantalla[0].innerText = PPTimagen[2];
-  pantalla[1].innerText = PPTimagen[bot];
-  if(bot == 1){
-    mensaje.innerText = "Ganaste!";
-    mensaje.classList.add("bg-green-500");
-  } else if(bot == 0){
-    mensaje.innerText = "Perdiste!";
-    mensaje.classList.add("bg-orange-500");
-  }
-  else{
-    mensaje.innerText = "Empate!";
-    mensaje.classList.add("bg-gray-500");
   }
   section3.appendChild(mensaje);
 }
 
 //  2. Crea un TODO list donde puedra agregar tareas y eliminarlas
 function Game2(){
+  while (section1.hasChildNodes()) {
+    section1.removeChild(section1.firstChild);
+  }
+  while (section2.hasChildNodes()) {
+    section2.removeChild(section2.firstChild);
+  }
+  while (section3.hasChildNodes()) {
+    section3.removeChild(section3.firstChild);
+  }
+  while (main.hasChildNodes()) {
+    main.removeChild(main.firstChild);
+  }
+}
+
+//  3. Crea un cuadro que al presionar las flechas del teclado se mueva
+function Game3(){
+  while (section1.hasChildNodes()) {
+    section1.removeChild(section1.firstChild);
+  }
+  while (section2.hasChildNodes()) {
+    section2.removeChild(section2.firstChild);
+  }
+  while (section3.hasChildNodes()) {
+    section3.removeChild(section3.firstChild);
+  }
+  while (main.hasChildNodes()) {
+    main.removeChild(main.firstChild);
+  }
+}
+//  4. Crea una calculadora que sume, reste, multiplique y divida dos numeros
+function Game4(){
+  while (section1.hasChildNodes()) {
+    section1.removeChild(section1.firstChild);
+  }
+  while (section2.hasChildNodes()) {
+    section2.removeChild(section2.firstChild);
+  }
+  while (section3.hasChildNodes()) {
+    section3.removeChild(section3.firstChild);
+  }
+  while (main.hasChildNodes()) {
+    main.removeChild(main.firstChild);
+  }
+}
+//  5. Crea un juego de memoria
+function Game5(){
+  while (section1.hasChildNodes()) {
+    section1.removeChild(section1.firstChild);
+  }
+  while (section2.hasChildNodes()) {
+    section2.removeChild(section2.firstChild);
+  }
+  while (section3.hasChildNodes()) {
+    section3.removeChild(section3.firstChild);
+  }
+  while (main.hasChildNodes()) {
+    main.removeChild(main.firstChild);
+  }
+}
+//2. Crea una calculadora que sume, reste, multiplique, divida, eleve a la potencia y saque la raiz cuadrada de cualquier cantidad de numeros
+function Game6(){
+  while (section1.hasChildNodes()) {
+    section1.removeChild(section1.firstChild);
+  }
+  while (section2.hasChildNodes()) {
+    section2.removeChild(section2.firstChild);
+  }
+  while (section3.hasChildNodes()) {
+    section3.removeChild(section3.firstChild);
+  }
+  while (main.hasChildNodes()) {
+    main.removeChild(main.firstChild);
+  }
+}
+function Game7(){
+  while (section1.hasChildNodes()) {
+    section1.removeChild(section1.firstChild);
+  }
+  while (section2.hasChildNodes()) {
+    section2.removeChild(section2.firstChild);
+  }
+  while (section3.hasChildNodes()) {
+    section3.removeChild(section3.firstChild);
+  }
+  while (main.hasChildNodes()) {
+    main.removeChild(main.firstChild);
+  }
+}
+function Game8(){
   while (section1.hasChildNodes()) {
     section1.removeChild(section1.firstChild);
   }
