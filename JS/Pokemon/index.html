@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pokemon</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedex</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="p-8 bg-blue-400 flex flex-col gap-4 items-center justify-center">
+    <form action="" class="flex items-center gap-4" onsubmit="getPokemon(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=20`,true);return false;">
+      <input id="search" class="py-2 px-4 rounded-full w-[190px]" type="number" min="1" max="1302" placeholder="Buscar por numero..." value="1">
+      <input type="button" class="py-2 px-4 rounded-full bg-gray-500" value="Buscar" onclick="getPokemon(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=20`,true);return false;">
+    </form>
+    <div class="flex items-center gap-16">
+      <button id="prev" class="bg-blue-600 h-fit px-8 py-2 rounded-full active:translate-y-1" onclick="getPokemon()">Prev</button>
+      <h1 id="list-name" class="text-4xl font-bold">Pokemons</h1>
+      <button id="next" class="bg-green-600 h-fit px-8 py-2 rounded-full active:translate-y-1" onclick="getPokemon()">Next</button>
+    </div>
+    <div id="list" class="grid lg:grid-cols-3 sm:grid-cols-2 justify-items-center gap-4"></div>
+  </body>
+  <script src="./index.js"></script>
 </html>
