@@ -52,8 +52,14 @@ const getPokemon = async (urlBase = "https://pokeapi.co/api/v2/pokemon?offset=0&
         }
       const poke = await fetch(pokemon.url);
       const dataPoke = await poke.json();
-      const IMG = dataPoke.sprites.other["official-artwork"].front_default;
-      div_pokemon.innerHTML = `<p class="capitalize text-lg">#${dataPoke.id} ${pokemon.name}</p><img class="h-[158px] w-[158px]" src="${IMG}"></img>`;
+      let IMG;
+      if(dataPoke.sprites.other["official-artwork"].front_default != null){
+        IMG = dataPoke.sprites.other["official-artwork"].front_default;
+      }
+      else{
+        IMG = dataPoke.sprites.front_default;
+      }
+      div_pokemon.innerHTML = `<p class="capitalize text-lg">#${dataPoke.id} ${pokemon.name}</p><img class="h-[158px] w-[158px]" draggable="false" src="${IMG}"></img>`;
       const TYPES = document.createElement("div");
       TYPES.classList.add(
         "flex",
@@ -61,7 +67,7 @@ const getPokemon = async (urlBase = "https://pokeapi.co/api/v2/pokemon?offset=0&
       )
       TYPES.innerHTML = ""
       for(let X of dataPoke.types){
-        TYPES.innerHTML += `<img class="w-[75px] h-[14px]" src="./src/${X.type.name}.png"></img>`
+        TYPES.innerHTML += `<img class="w-[75px] h-[14px]" draggable="false" src="./src/img/${X.type.name}.png"></img>`
       }
       div_pokemon.appendChild(TYPES);
       document.getElementById("list").appendChild(div_pokemon);
