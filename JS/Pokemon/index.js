@@ -1,10 +1,12 @@
 /*Consume API of Pokemon*/
 
-const getPokemon = async (urlBase = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=20",searchData = false) => {
+const urlAPI = "https://pokeapi.co/api/v2/pokemon"
+
+const getPokemon = async (urlBase = `${urlAPI}?offset=0&limit=20`,searchData = false) => {
   // condicional para comprobar que el numero del pokemon ingresado se valido
   if(searchData){
     if(document.getElementById("search").value > 0 && document.getElementById("search").value <= 1302){
-      urlBase = `https://pokeapi.co/api/v2/pokemon?offset=${document.getElementById("search").value-1}&limit=20`;
+      urlBase = `${urlAPI}?offset=${document.getElementById("search").value-1}&limit=20`;
     } else{
       alert("ingrese un numero valido.");
       return 0;
@@ -59,10 +61,16 @@ const getPokemon = async (urlBase = "https://pokeapi.co/api/v2/pokemon?offset=0&
       }
       const poke = await fetch(pokemon.url);
       const dataPoke = await poke.json();
-      let IMG;
+      let IMG = [];
       // condicional para mostrar la imagen del artwork oficial, si no tiene, se muestra el sprite base (hay algunos pokemons que no tiene imagenes)
-      (dataPoke.sprites.other["official-artwork"].front_default != null) ? IMG = dataPoke.sprites.other["official-artwork"].front_default : IMG = dataPoke.sprites.front_default;
-      div_pokemon.innerHTML = `<p class="capitalize text-lg">#${dataPoke.id} ${pokemon.name}</p><img class="h-[158px] w-[158px]" draggable="false" src="${IMG}"></img>`;
+      if(dataPoke.sprites.other["official-artwork"].front_default != null){
+        IMG[0] = dataPoke.sprites.other["official-artwork"].front_default;
+        IMG[1] = dataPoke.sprites.other["official-artwork"].front_shiny;
+      }else{
+        IMG[0] = dataPoke.sprites.front_default;
+        IMG[1] = dataPoke.sprites.front_shiny;
+      }
+      div_pokemon.innerHTML = `<p class="capitalize text-lg">#${dataPoke.id} ${pokemon.name}</p><img id="n${dataPoke.id}" class="h-[158px] w-[158px] active:scale-110 cursor-pointer" draggable="false" onclick="showShiny(${dataPoke.id})" src="${IMG[0]}"></img>`;
       const TYPES = document.createElement("div");
       TYPES.classList.add("flex","gap-2");
       TYPES.innerHTML = "";
@@ -77,5 +85,17 @@ const getPokemon = async (urlBase = "https://pokeapi.co/api/v2/pokemon?offset=0&
     console.error(error);
   }
 }
+
+const showShiny = async (index) =>{
+  // Cambiar entre imagen shiny y default
+  const data = await fetch(`${urlAPI}/${index}/`);
+  const pokemon = await data.json();
+  console.log(pokemon);
+  if(document.getElementById(`n${index}`).getAttributeNode("src").value == pokemon.sprites.other["official-artwork"].front_default){
+    document.getElementById(`n${index}`).getAttributeNode("src").value = pokemon.sprites.other["official-artwork"].front_shiny;
+  }else{
+    document.getElementById(`n${index}`).getAttributeNode("src").value = pokemon.sprites.other["official-artwork"].front_default;
+  }
+};
 
 getPokemon();

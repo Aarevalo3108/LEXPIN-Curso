@@ -19,7 +19,7 @@
   <body class="p-8 bg-gradient-to-r from-sky-700 via-teal-700 to-red-700 flex flex-col gap-4 items-center justify-center tracking-[0.15rem]">
     <form action="" class="flex items-center gap-4" onsubmit="getPokemon(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=20`,true);return false;">
       <input id="search" class="py-2 px-4 rounded-full w-[210px]" type="number" min="1" max="1302" placeholder="Buscar por numero..." value="1">
-      <input type="button" class="py-2 px-4 rounded-full bg-gray-500" value="Buscar" onclick="getPokemon(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=20`,true);return false;">
+      <input type="button" class="py-2 px-4 rounded-full bg-gray-500 cursor-pointer" value="Buscar" onclick="getPokemon(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=20`,true);return false;">
     </form>
     <div class="grid justify-items-center items-center grid-cols-2 sm:grid-cols-3 gap-y-4">
       <button id="prev" class="bg-blue-600 h-fit px-8 py-2 rounded-full active:translate-y-1 sm:order-1" onclick="getPokemon()">Prev</button>
