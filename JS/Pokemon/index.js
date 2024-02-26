@@ -17,24 +17,26 @@ const getPokemon = async (urlBase = "https://pokeapi.co/api/v2/pokemon?offset=0&
     const response = await fetch(urlBase);
     const data = await response.json();
     if(data.next == null){
-      document.getElementById("next").setAttribute("onclick",`getPokemon()`)
+      document.getElementById("next").setAttribute("onclick",`getPokemon()`);
       document.getElementById("next").disabled = true;
     }else{
-      document.getElementById("next").setAttribute("onclick",`getPokemon("${data.next}")`)
+      document.getElementById("next").setAttribute("onclick",`getPokemon("${data.next}")`);
       document.getElementById("next").disabled = false;
     }
     if(data.previous == null){
-      document.getElementById("prev").setAttribute("onclick",`getPokemon()`)
+      document.getElementById("prev").setAttribute("onclick",`getPokemon()`);
       document.getElementById("prev").disabled = true;
     }else{
-      document.getElementById("prev").setAttribute("onclick",`getPokemon("${data.previous}")`)
+      document.getElementById("prev").setAttribute("onclick",`getPokemon("${data.previous}")`);
       document.getElementById("prev").disabled = false;
     }
     //Introduce pokemons in the HTML
+    let i = 1;
     data.results.map(async (pokemon) => {
       const div_pokemon = document.createElement("div");
       if(div_pokemon.classList.value == ""){
         div_pokemon.classList.add(
+          `order-[${i}]`,
           "flex",
           "flex-col",
           "gap-4",
@@ -49,6 +51,7 @@ const getPokemon = async (urlBase = "https://pokeapi.co/api/v2/pokemon?offset=0&
           "shadow-md",
           "text-center"
           );
+          i++;
         }
       const poke = await fetch(pokemon.url);
       const dataPoke = await poke.json();
@@ -71,11 +74,11 @@ const getPokemon = async (urlBase = "https://pokeapi.co/api/v2/pokemon?offset=0&
       }
       div_pokemon.appendChild(TYPES);
       document.getElementById("list").appendChild(div_pokemon);
-
     });
   } catch (error) {
     console.error(error);
   }
+  console.log(document.getElementById('list'))
 }
 
 getPokemon();
