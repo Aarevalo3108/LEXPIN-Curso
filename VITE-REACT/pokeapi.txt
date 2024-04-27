@@ -1,0 +1,37 @@
+Realizar una aplicación en React que permita consumir la API de POKEMON.
+Esta debe de mostrar los pokemon, los datos básicos de los pokemon,
+también debe de mostrar la páginación para mostrar cada uno de los pokemons,
+por otra parte debes de ser capaz de indicar cuales pokemons son tus favoritos
+dandole a un corazón, y debe de haber un desplegable o página que muestre esta
+lista de favoritos, los pokemons deben de ser guardados en local storage.
+Además, debe de haber un buscador que me permita buscar pokemons por su nombre.
+
+También deben de crear un repositorio donde debe de haber las siguientes ramas:
+
+- Main
+- Ramas con los nombres de cada participante
+
+En Main solo debe de estar lo que esta completamente funcional, y
+deben de repartirse las tareas para la realización del software,
+si alguno de los participantes no puede contribuir con el codigo,
+debe de ayudar con la logica. El repositorio debe de tener un archivo
+readme que indique como usar el software e instalarlo, por otra parte.
+
+Deben entregar el repositorio y un deploy en github pages o usando la herramienta
+de puertos de Visual studio code para la entrega
+
+Tareas:
+- Mostrar datos basicos
+- Mostrar paginacion (numerito)
+- Boton de favoritos
+- Mostrar lista de favoritos
+- Guardar lista en localStorage
+- Implementar buscador
+- Escribir archivo readme
+- Desplegar proyecto
+
+Tareas iniciales:
+- Comunicacion con API
+- Diseño
+- Responsive
+- 

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import * as Pages from './components/Pages'
 import Nav from './components/Nav'
+import Class1 from './components/Class1'
 
 // ReactDOM.createRoot(document.getElementById('root')).render(
 //   <React.StrictMode>
@@ -14,10 +15,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Nav/>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<h1 className='text-3xl text-gray-200'>Bienvenido</h1>} />
+        <Route path="/" element={<h1 className='text-3xl text-gray-200'>Bienvenido <Class1/></h1>} />
         <Route path="/about" element={<h1 className='text-3xl text-gray-200'>Acerca de</h1>} />
         <Route path="/games" element={<Pages.Games/>} />
         <Route path="/api" element={<Pages.Api/>} />
+        <Route path="/*" element={<h1 className='text-3xl text-gray-200'>No existe. Error 404</h1>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
