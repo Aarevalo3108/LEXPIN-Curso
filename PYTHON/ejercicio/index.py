@@ -25,8 +25,13 @@ Fecha de entrega: Viernes 03 de mayo del 2024
 '''
 
 import os
+from dotenv import load_dotenv
 import re
 import pywhatkit
+import smtplib
+from email.message import EmailMessage
+
+load_dotenv()
 
 class Usuario:
   def __init__(self, nombre, apellido, correo, telefono):
@@ -63,10 +68,11 @@ def registrar():
   if re.search(regex["nombre"], apellido) is None:
     print("Apellido invalido")
     return False
-  telefono = input("* Teleefono (formato: 04123453678): ")
+  telefono = input("* Telefono (formato: 04123453678): ")
   if re.search(regex["telefono"], telefono) is None:
     print("Teléfono invalido")
     return False
+  telefono = "+58" + telefono[1:]
   newUsuario = Usuario(nombre, apellido, correo, telefono)
   if os.path.exists("usuarios.txt"):
     with open("usuarios.txt", "a") as archivo:
@@ -75,15 +81,20 @@ def registrar():
     with open("usuarios.txt", "w") as archivo:
       archivo.write(str(newUsuario))
   print("\nUsuario registrado!")
-
+  pywhatkit.send_mail(os.environ.get("MAIL"),os.environ.get("PW"), "Python", "Te damos la bienvenida desde Python, " + newUsuario.nombre + " " + newUsuario.apellido + "!", str(newUsuario.correo))
+  pywhatkit.sendwhatmsg_instantly(str(newUsuario.telefono), "¡Te damos la bienvenida desde Python, " + newUsuario.nombre + " " + newUsuario.apellido + "!", 30, True, 4)
 def listar():
+  print("\n* Listado de usuarios:\n")
   if not os.path.exists("usuarios.txt"):
     print("No hay usuarios registrados")
     return False
   with open("usuarios.txt", "r") as archivo:
-    print("\n* Listado de usuarios:\n")
+    check = True
     for linea in archivo:
       print(linea)
+      check = False
+    if check:
+      print("No hay usuarios registrados")
 
 def buscar():
   correo = input("\nCorreo a buscar: ")
@@ -127,7 +138,7 @@ switch = {
   "4": lambda: eliminar(),
   "5": lambda: salir()
 }
-
+os.system('cls')
 print("-" * 60)
 print("\n" + " " * 7 + "Bienvenido al sistema de registro de usuarios.\n")
 while op != 5:
@@ -139,4 +150,5 @@ while op != 5:
   print("  5. Salir")
   print("-" * 60)
   op = input("\n- Opcion: ")
+  os.system('cls')
   switch.get(op, lambda: print("\nOpción inválida"))()
