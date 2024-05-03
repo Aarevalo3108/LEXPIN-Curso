@@ -25,14 +25,14 @@ Fecha de entrega: Viernes 03 de mayo del 2024
 '''
 
 import os
+import tkinter as tk
 from dotenv import load_dotenv
 import re
 import pywhatkit
-import smtplib
-from email.message import EmailMessage
 
 load_dotenv()
 
+app = tk.Tk()
 class Usuario:
   def __init__(self, nombre, apellido, correo, telefono):
     self.nombre = nombre
