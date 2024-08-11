@@ -41,7 +41,7 @@ exports.getProduct = async (req,res) => {
 
 exports.createProduct = async (req,res) => {
   try{
-    if(!req.body.nombre || !req.body.precio){
+    if(!req.body.nombre && !req.body.precio){
       return res.status(400).json({error: 'nombre y precio son requeridos'});
     }
     const producto = new Productos(req.body);
@@ -64,18 +64,7 @@ exports.deleteProduct = async (req,res) => {
 
 exports.updateProduct = async (req,res) => {
   try{
-    const producto = await Productos.findByIdAndUpdate
-    (req.params.id, req.body, {new: true});
-    res.json(producto);
-  }
-  catch (error) {
-    res.status(500).json({error: error.message});
-  }
-}
-
-exports.updateProduct = async (req,res) => {
-  try{
-    if(!req.body.nombre || !req.body.precio){
+    if(!req.body.nombre && !req.body.precio){
       return res.status(400).json({error: 'nombre y precio son requeridos'});
     }
     const producto = await Productos.findByIdAndUpdate
