@@ -21,7 +21,7 @@ exports.getProducts = async (req,res) => {
 exports.searchProducts = async (req,res) => {
   try{
     const nombre = req.query.nombre || '';
-    const precio = req.query.precio || 0;
+    const precio = req.query.precio || 1;
     //Traer productos por nombre o precio
     const productos = await Productos.find({$or: [{nombre: {$regex: nombre, $options: 'i'}}, {precio: precio}]});
     res.json(productos);
